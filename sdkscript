@@ -1,0 +1,78 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBezyOOm4Ug9j1o7aRf03Kly6bGsdAIQGI",
+  authDomain: "fbcr-a6ba5.firebaseapp.com",
+  projectId: "fbcr-a6ba5",
+  storageBucket: "fbcr-a6ba5.appspot.com",
+  messagingSenderId: "717669287495",
+  appId: "1:717669287495:web:121cba675f6f88e06b1362",
+  measurementId: "G-MC9SX7Z7HL"
+};
+    
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+ 
+
+//server key/fcm key here
+  
+AAAAiBu5LNI:APA91bHRT1OfodJpPgRdG6aYfkGz9qRW1L-6zB3F65eLuxGS-7qJcMaTeYKHEuFHl_8l3m08nagS0ZqnIstnHWCJhikoI9fyPOnKP1rtvaSrM5IbcaX3y0elG79HQyliSaZYycMRS6uG
+
+
+
+
+//sender id
+
+584580672722
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <script type="module">
+//   // Import the functions you need from the SDKs you need
+//   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+//   // TODO: Add SDKs for Firebase products that you want to use
+//   // https://firebase.google.com/docs/web/setup#available-libraries
+
+//   // Your web app's Firebase configuration
+//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyB6XC8yHfe125NDoPk0QaNPHhxzeMvEKu4",
+//     authDomain: "laravel-7d8b7.firebaseapp.com",
+//     projectId: "laravel-7d8b7",
+//     storageBucket: "laravel-7d8b7.appspot.com",
+//     messagingSenderId: "584580672722",
+//     appId: "1:584580672722:web:8cf5ee9a9171b20d60110b",
+//     measurementId: "G-5GWYS5TXCT"
+//   };
+
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+// </script>
+
+
+
+//token here 
+
+cSNPdBjjHr8:APA91bHLERgwAo_cnosmqbC_lPs1qs-bB2awfQwdsDoeF0zSYPgKPFcGEDamS-jLqSkO7Y-bGviJkwpXTD9DbfUOhwGe34pkcICEQR03s9KHR-9dxfe68C7BTTisfd2e9L3Cs9e7Gesc
