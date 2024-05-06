@@ -192,7 +192,7 @@ class FilemanagerController extends Controller {
                 ));
             }
         }
-        if ($editFolder = $this->request->input('editfolder')) {
+        if ($this->request->input('editfolder')) {
             $val = array(
                 'name' => $this->request->input('name'),
                 'folder_id' => $this->request->input('id')
@@ -302,7 +302,7 @@ class FilemanagerController extends Controller {
                 'content' => view('filemanager/display', array('file' => model('filemanager')->find($id)))
             ));
         }
-        if ($dropbox = $this->request->input('dropbox') or $onedrive = $this->request->input('onedrive')) {
+        if ($dropbox = $this->request->input('dropbox') || $onedrive = $this->request->input('onedrive')) {
             $fileName = $this->request->input('file_name');
             $ogFileName = $fileName;
             $fileSize = $this->request->input('file_size');
@@ -396,7 +396,6 @@ class FilemanagerController extends Controller {
         if($this->request->input('filter-form'))
         {
             $files = $this->model('filemanager')->getFiles($offset, 0, $sortBy, $fileType, $filterRange, $sortOrderName, $sortOrderDate);
-            $folders = $this->model('filemanager')->getFolders(null, $sortBy, $fileType, $filterRange, $sortOrderName, $sortOrderDate);
             $countFiles = $this->model('filemanager')->getCountOfFiles(0,$sortBy, $fileType, $filterRange, $sortOrderName, $sortOrderDate);
             return json_encode([
                 'type' => 'changefile-html',
@@ -406,8 +405,7 @@ class FilemanagerController extends Controller {
                     'sortOrderDate' => $sortOrderDate,
                     'sortBy' => $sortBy,
                     'openFolder' => $openFolder,
-                    'countOfFiles' => $countFiles,
-                    'folderList' => $folderList)) ,
+                    'countOfFiles' => $countFiles,)) ,
                 'pluginsToLoad' => ['reloadInit'],
                 'value' => '#page-container .change-html-file-manager'
             ]);
@@ -449,7 +447,7 @@ class FilemanagerController extends Controller {
 public function bulkIndex(){
         $this->setTitle(l('file-manager'))->setActiveIconMenu('filemanager');
     $this->appSideLayout = '';
-    if ($this->request->input('dragged') and $files = $this->request->inputFile('file')) {
+    if ($this->request->input('dragged') && $files = $this->request->inputFile('file')) {
         $val = array('folder_id' => $this->request->input('folder', 0));
         $uploadedFiles = array();
         foreach($files as $file) {
@@ -623,7 +621,7 @@ public function bulkIndex(){
             }
         }
     }
-    if ($editFolder = $this->request->input('editfolder')) {
+    if ($this->request->input('editfolder')) {
         $val = array(
             'name' => $this->request->input('name'),
             'folder_id' => $this->request->input('id')
@@ -834,7 +832,7 @@ public function bulkIndex(){
         ));
     }
     if($this->request->input('imagebuilder') ) {
-        return $this->view('filemanager/image-builder-folder', array('files' => $files, 'openFolder' => $openFolder, 'from' => $from, 'id' => $id, 'sortBy' => $sortBy, 'fileType' => $fileType,
+        return $this->view('filemanager/image-builder-folder', array('files' => $files, 'openFolder' => $openFolder, 'sortBy' => $sortBy, 'fileType' => $fileType,
             'filterRange' => $filterRange,
             'sortOrderName'=> $sortOrderName,
             'sortOrderDate' => $sortOrderDate,
@@ -853,8 +851,8 @@ public function bulkIndex(){
                     'sortOrderDate' => $sortOrderDate,
                     'sortBy' => $sortBy,
                     'openFolder' => $openFolder,
-                    'countOfFiles' => $countFiles, 
-                    'folderList' => $folderList)) ,
+                    'countOfFiles' => $countFiles,
+                    'folderList' => $folderList)),
                 'pluginsToLoad' => ['reloadInit'],
                 'value' => '.add__media_side--block'
             ]);
