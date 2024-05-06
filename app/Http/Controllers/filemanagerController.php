@@ -247,7 +247,6 @@ class FilemanagerController extends Controller {
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
             $data = curl_exec($ch);
-            $error = curl_error($ch);
             curl_close($ch);
             $ext = get_file_extension($fileName);
             $fileName = md5($fileName.time()).'.'.$ext;
@@ -373,8 +372,7 @@ class FilemanagerController extends Controller {
                 'content' => view('filemanager/display', array('file' => model('filemanager')->find($id)))
             ));
         }
-        if ($onedrive = $this->request->input('onedrive')) {
-        }
+        if ($onedrive = $this->request->input('onedrive')) {}
         $offset = $this->request->input('offset', 0);
         $sortBy = $this->request->input('sortBy');
         $fileType = $this->request->input('fileType','');
@@ -656,7 +654,6 @@ public function bulkIndex(){
     if ($google = $this->request->input('google')) {
         $fileId = $this->request->input('file_id');
         $fileName = $this->request->input('file_name');
-        $ogFileName = $fileName;
         $fileSize = $this->request->input('file_size');
         $oAuthToken = $this->request->input('oauthToken');
         if (!$this->model('filemanager')->validSelectedFile($fileName)) {
@@ -671,7 +668,6 @@ public function bulkIndex(){
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         $data = curl_exec($ch);
-        $error = curl_error($ch);
         curl_close($ch);
         $ext = get_file_extension($fileName);
         $fileName = md5($fileName.time()).'.'.$ext;
@@ -729,7 +725,6 @@ public function bulkIndex(){
     }
     if ($dropbox = $this->request->input('dropbox') || $onedrive = $this->request->input('onedrive')) {
         $fileName = $this->request->input('file_name');
-        $ogFileName = $fileName;
         $fileSize = $this->request->input('file_size');
         $fileLink = $this->request->input('file');
         if (!$this->model('filemanager')->validSelectedFile($fileName)) {
@@ -796,8 +791,7 @@ public function bulkIndex(){
             'content' => view('filemanager/single-display', array('file' => model('filemanager')->find($id)))
         ));
     }
-    if ($onedrive = $this->request->input('onedrive')) {
-    }
+    if ($onedrive = $this->request->input('onedrive')) {}
     $offset = $this->request->input('offset', 0);
     if(preg_match('/^[a-z]+$/', $this->request->input('sortBy'))){
         $sortBy = $this->request->input('sortBy');
