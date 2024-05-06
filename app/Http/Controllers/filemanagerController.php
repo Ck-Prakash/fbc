@@ -4,6 +4,7 @@ class FilemanagerController extends Controller {
     {
         parent::__construct($request);
     }
+    
     public function index(){
         $is_user_authorized = is_user_authorized($this->request->requestUrl);
         if (!$is_user_authorized) {
